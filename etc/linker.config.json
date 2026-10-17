@@ -1,0 +1,29 @@
+{
+	"provideLibs": [	
+		    "libdummy_binary_dnssd-x86_64-v2.so",
+		    "libdummy_binary_dnssd.so",
+		    "libdummy_binary_libmdnssd-x86_64-v2.so.so",
+		    "libdummy_binary_libmdnssd.a-x86_64-v2.so",
+		    "libdummy_binary_libmdnssd.a.so",
+		    "libdummy_binary_libmdnssd.so.so",
+		    "libdummy_binary_mdnsd-x86_64-v2.so",
+		    "libdummy_binary_mdnsd.so",
+		    "libdummy_ext_mdnsresponder-x86_64-v2.so",
+		    "libdummy_ext_mdnsresponder.so",
+		    "libdummy_headers_ext_mdnsresponder-x86_64-v2.so",
+		    "libdummy_headers_ext_mdnsresponder.so",
+		    "libdummy_shared_mdnsresponder-x86_64-v2.so",
+		    "libdummy_shared_mdnsresponder.so",
+		    "libmdnssd-x86_64-v2.so",
+		    "libmdnssd.so"
+	],
+	"requireLibs": [	
+		    "libc++_shared.so",
+		    "libc.so",
+		    "libcutils.so",
+		    "libdl.so",
+		    "liblog.so",
+		    "libm.so"
+	],
+	"visible": true
+}

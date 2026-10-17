@@ -1,0 +1,97 @@
+// Auto-generated prebuilt Blueprint for external/mdnsresponder
+// Extracted from Extractive APEX package: org.blisslabs.ag.ext.mdnsresponder
+
+package {
+    default_applicable_licenses: ["external_mdnsresponder_license"],
+}
+
+license {
+    name: "external_mdnsresponder_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+        "SPDX-license-identifier-BSD",
+        "SPDX-license-identifier-NCSA",
+        "SPDX-license-identifier-OpenSSL",
+        "legacy_notice",
+    ],
+    license_text: [
+        "LICENSE",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libmdnssd",
+    host_supported: true,
+    recovery_available: true,
+    vendor_available: true,
+    export_include_dirs: [
+        "include",
+        "mDNSShared",
+    ],
+    arch: {
+        x86_64: {
+            srcs: ["lib/libmdnssd.so"],
+        },
+    },
+    shared_libs: ["liblog"],
+    static_libs: ["libcutils"],
+    min_sdk_version: "apex_inherit",
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.adbd",
+    ],
+    prefer: true,
+}
+
+cc_prebuilt_library_static {
+    name: "libmdnssd_static",
+    host_supported: true,
+    recovery_available: true,
+    vendor_available: true,
+    export_include_dirs: [
+        "include",
+        "mDNSShared",
+    ],
+    arch: {
+        x86_64: {
+            srcs: ["lib/libmdnssd.a"],
+        },
+    },
+    min_sdk_version: "apex_inherit",
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.adbd",
+    ],
+    prefer: true,
+}
+
+cc_prebuilt_binary {
+    name: "mdnsd",
+    arch: {
+        x86_64: {
+            srcs: ["bin/mdnsd"],
+        },
+    },
+    init_rc: ["mdnsd.rc"],
+    shared_libs: [
+        "libcutils",
+        "liblog",
+    ],
+    prefer: true,
+}
+
+cc_prebuilt_binary {
+    name: "dnssd",
+    arch: {
+        x86_64: {
+            srcs: ["bin/dnssd"],
+        },
+    },
+    shared_libs: [
+        "libmdnssd",
+        "libcutils",
+        "liblog",
+    ],
+    prefer: true,
+}
